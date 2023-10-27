@@ -2724,7 +2724,7 @@ html.add-scroll {
   padding: 15px 30px;
   margin: 10px auto;
   border-radius: 10px;
-  box-shadow: 0 0 40px 40px #f137a6 inset, 0 0 0 0 #f137a6;
+  box-shadow: 0 0 40px 40px #db7093 inset, 0 0 0 0 #db7093;
   font-family: Montserrat, sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
@@ -2733,8 +2733,8 @@ html.add-scroll {
   transition: 0.15s ease-in-out;
 }
 .glow-button:hover {
-  box-shadow: 0 0 10px 0 #f137a6 inset, 0 0 10px 4px #f137a6;
-  color: #f137a6;
+  box-shadow: 0 0 10px 0 #db7093 inset, 0 0 10px 4px #db7093;
+  color: #db7093;
   background: rgba(255, 255, 255, 0.7);
 }
 @media (max-width: 768px) {
@@ -3552,7 +3552,7 @@ button img {
 .submit-roulette,
 input[value="Получить бесплатно"] {
   text-transform: uppercase;
-  padding: 10px 15px;
+  padding: 20px 35px;
   margin: 15px 0;
   outline: 0;
   border: none;
@@ -3574,10 +3574,21 @@ input[value="Получить бесплатно"]:active {
   box-shadow: none !important;
 }
 .input-roulette {
-  padding-left: 5px;
+  padding: 10px;
   height: 42px;
   margin-bottom: 10px;
-  width: auto !important;
+  width: 50% !important;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-roulette:focus {
+  border-color: #3498db;
 }
 input[placeholder="Ваш телефон"],
 input[placeholder="Ваше имя"] {
@@ -3977,8 +3988,11 @@ input[placeholder="Ваше имя"] {
   left: 0;
 }
 .chat-content-list .form-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
   width: 100%;
-  text-align: center;
+  color: #333;
 }
 .chat-content-list .form-group-inline {
   display: inline-block;
@@ -3998,7 +4012,7 @@ input[placeholder="Ваше имя"] {
   min-height: 34px;
 }
 .custom-select option {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
 }
 .custom-select.is-invalid {

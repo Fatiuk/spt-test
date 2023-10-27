@@ -180,7 +180,8 @@ function appAge() {
       let selectS = "" + empty_field + "." + full_month + "." + year + "";
       age = new Date().getFullYear() - year;
       myMassange(selectS);
-      $(this).css("display", "none");
+      document.querySelector(".chat-content-list .form-group").style.display =
+        "none";
       process = true;
       clearInterval(data);
     }
@@ -358,6 +359,7 @@ document.getElementById("scroll_id").addEventListener("click", function () {
   }
 });
 
+// Function which show more reviews after click on button
 const handleShowMoreReviews = () => {
   const hiddenComments = document.querySelectorAll(
     ".comment-item:not(.comment-item-show)"
