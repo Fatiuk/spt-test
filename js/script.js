@@ -310,17 +310,40 @@ function scrollDown() {
     wrap.scrollTop(desiredHeight);
   }
 }
-
+// Function which send form to console
 $("#order_form").submit(function (event) {
   event.preventDefault();
-
   let formData = {
     name: $("#input-name").val(),
     phone: $("#input-phone").val(),
-    gender,
-    age,
-    allergy,
+    gender: gender,
+    age: age,
+    allergy: allergy,
   };
 
-  console.log("Данные формы:", formData);
+  console.log(formData);
+
+  $.ajax({
+    type: "POST",
+    url: "/order/cpa/",
+    data: formData,
+    success: function (response) {
+      console.log("Форма была успешно оправлена");
+    },
+    error: function (error) {
+      alert("Произошла ошибка при отправке формы");
+    },
+  });
+});
+
+// Validation for phone number
+const validatePhone = (phone) => {
+  const regex = /^\+38\d{10}$/;
+  return regex.test(phone);
+};
+$("#input-phone").on("input", function () {
+  const inputValue = $(this).val();
+  if (!inputValue.startsWith("+380")) {
+    $(this).val("+380");
+  }
 });
