@@ -196,14 +196,14 @@ function YsNo() {
   $("#yeas").click(() => {
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Да");
-    allergy = "Yes";
+    allergy = true;
     process = true;
     scrollDown();
   });
   $("#no").click(() => {
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Нет");
-    allergy = "No";
+    allergy = false;
     process = true;
     scrollDown();
   });
