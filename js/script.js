@@ -350,7 +350,9 @@ $("#input-phone").on("input", function () {
 
 // Function which scrolls down when clicked on button
 document.getElementById("scroll_id").addEventListener("click", function () {
-  var targetElement = document.querySelector(this.getAttribute("data-scroll"));
+  const targetElement = document.querySelector(
+    this.getAttribute("data-scroll")
+  );
   if (targetElement) {
     scrollDown();
   }
