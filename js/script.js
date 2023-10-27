@@ -357,3 +357,22 @@ document.getElementById("scroll_id").addEventListener("click", function () {
     scrollDown();
   }
 });
+
+const handleShowMoreReviews = () => {
+  const hiddenComments = document.querySelectorAll(
+    ".comment-item:not(.comment-item-show)"
+  );
+  for (let i = 0; i < 3 && i < hiddenComments.length; i++) {
+    hiddenComments[i].classList.add("comment-item-show");
+  }
+  const remainingHiddenComments = document.querySelectorAll(
+    ".comment-item:not(.comment-item-show)"
+  );
+  if (remainingHiddenComments.length === 0) {
+    showMoreButton.style.display = "none";
+  }
+  scrollDown();
+};
+
+const showMoreButton = document.querySelector(".glow-button");
+showMoreButton.addEventListener("click", handleShowMoreReviews);
