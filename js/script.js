@@ -1,3 +1,4 @@
+// Default message
 const massange = [
   {
     m: "Здравствуйте, меня зовут Ольга Викторовна. Я врач высшей категории и кандидат медицинских наук, специализируюсь на кардиологии. Я провожу ЭКГ и занимаюсь лечением ишемической болезни сердца, постинфарктных состояний, артериальной гипертензии, нарушений сердечного ритма и сердечной недостаточности. Добро пожаловать на мой официальный сайт.",
@@ -22,11 +23,16 @@ const massange = [
   },
 ];
 
-var mass_id = 0;
-var length_mass = 0;
-var lengt_num_mas = 0;
-var text = "";
-var process = true;
+let mass_id = 0;
+let length_mass = 0;
+let lengt_num_mas = 0;
+let text = "";
+let process = true;
+let gender;
+let age;
+let allergy;
+
+// Main function
 const set = setTimeout(() => {
   const body_mas =
     '<div class="chat-content-item manager "><div class="chat-content-desc"><div class="chat-content-desc-item manager"><p id="mass' +
@@ -96,13 +102,14 @@ const set = setTimeout(() => {
             .offsetTop;
           scriplongBody(nev_div);
         }
-      } else if (
-        lengt_num_mas === 21
-      ) {
+      } else if (lengt_num_mas === 21) {
         scrollDown();
         clearInterval(mas_inf);
-        $('#mass' + lengt_num_mas + '').parent().parent().css('display', 'none');
-        $('.iframe-form').css('display', 'block');
+        $("#mass" + lengt_num_mas + "")
+          .parent()
+          .parent()
+          .css("display", "none");
+        $(".iframe-form").css("display", "block");
         scrollDown();
         clearInterval(set);
         showForm();
@@ -120,7 +127,6 @@ function app() {
   scrollDown();
 }
 
-
 function myMassange(userGend) {
   let mass =
     '<div class="chat-content-item user "><div class="chat-content-desc"><div class="chat-content-desc-item user"><p>' +
@@ -129,7 +135,6 @@ function myMassange(userGend) {
   $(".chat-content-list").append(mass);
   scrollDown();
 }
-
 
 function appGender() {
   scrollDown();
@@ -143,7 +148,7 @@ function genderNext() {
     document.querySelector(".chat-content-buttons-gender").style.display =
       "none";
     myMassange("Мужчина");
-
+    gender = "Мужчина";
     setTimeout(() => {
       process = true;
     }, 500);
@@ -153,14 +158,13 @@ function genderNext() {
     document.querySelector(".chat-content-buttons-gender").style.display =
       "none";
     myMassange("Женщина");
-
+    gender = "Женщина";
     setTimeout(() => {
       process = true;
     }, 500);
     scrollDown();
   });
 }
-
 
 function appAge() {
   scrollDown();
@@ -174,7 +178,7 @@ function appAge() {
     let year = $(".select-year").val();
     if (empty_field != "" && full_month != "" && year != "") {
       let selectS = "" + empty_field + "." + full_month + "." + year + "";
-
+      age = new Date().getFullYear() - year;
       myMassange(selectS);
       $(this).css("display", "none");
       process = true;
@@ -182,7 +186,6 @@ function appAge() {
     }
   }, 500);
 }
-
 
 function YsNo() {
   scrollDown();
@@ -192,17 +195,18 @@ function YsNo() {
   $("#yeas").click(() => {
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Да");
+    allergy = "Yes";
     process = true;
     scrollDown();
   });
   $("#no").click(() => {
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Нет");
+    allergy = "No";
     process = true;
     scrollDown();
   });
 }
-
 
 function Photofoot() {
   $(".chat-content-list").append(
@@ -213,7 +217,6 @@ function Photofoot() {
     process = true;
   }, 8500);
 }
-
 
 function addArray() {
   end_massange1 = {
@@ -276,7 +279,6 @@ function addArray() {
   );
 }
 
-
 let top_scroling = 0;
 
 function scriplongBody(x) {
@@ -308,3 +310,17 @@ function scrollDown() {
     wrap.scrollTop(desiredHeight);
   }
 }
+
+$("#order_form").submit(function (event) {
+  event.preventDefault();
+
+  let formData = {
+    name: $("#input-name").val(),
+    phone: $("#input-phone").val(),
+    gender,
+    age,
+    allergy,
+  };
+
+  console.log("Данные формы:", formData);
+});
