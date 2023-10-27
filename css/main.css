@@ -1240,7 +1240,6 @@ img {
   display: block;
 }
 .about {
-  width: 276px;
   display: inline-block;
   vertical-align: top;
   background: rgba(0, 0, 0, 0.8);
@@ -2537,7 +2536,7 @@ html.add-scroll {
 }
 .scroll-me {
   position: fixed;
-  right: 40px;
+  right: 10px;
   bottom: 20%;
   width: 40px;
   display: flex;
@@ -3936,85 +3935,84 @@ input[placeholder="Ваше имя"] {
   }
 }
 .form {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 .chat-getnumber-item .form-group {
-    margin: 0 auto 20px;
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-  }
-  .chat-getnumber-item .form-group input[type="tel"] {
-    width: 100%;
-    max-width: 500px;
-    border: 2px solid #e4e4e4;
-    height: 60px;
-    display: block;
-    padding: 0 45px 0 10px;
-    outline: 0;
-    border-radius: 10px;
-    font-size: 18px;
-    background: #fff;
-    margin: 0 auto;
-  }
-  .chat-getnumber-item .form-group input[type="tel"].is-invalid {
-    border: 1px solid #ff2330;
-  }
-  .chat-getnumber-item .form-group input[type="tel"].done {
-    border: 1px solid #40c043;
-  }
-  .chat-getnumber-item .form-group i {
-    position: absolute;
-    font-size: 32px;
-    color: #40c043;
-    width: 35px;
-    height: 35px;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .chat-content-list .form-group {
-    width: 100%;
-    text-align: center;
-  }
-  .chat-content-list .form-group-inline {
-    display: inline-block;
-  }
-  .custom-select {
-    font-size: 16px;
-    font-weight: 300;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    background: url("../images/arrow_down.png") no-repeat right 10px center,
+  margin: 0 auto 20px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+.chat-getnumber-item .form-group input[type="tel"] {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #e4e4e4;
+  height: 60px;
+  display: block;
+  padding: 0 45px 0 10px;
+  outline: 0;
+  border-radius: 10px;
+  font-size: 18px;
+  background: #fff;
+  margin: 0 auto;
+}
+.chat-getnumber-item .form-group input[type="tel"].is-invalid {
+  border: 1px solid #ff2330;
+}
+.chat-getnumber-item .form-group input[type="tel"].done {
+  border: 1px solid #40c043;
+}
+.chat-getnumber-item .form-group i {
+  position: absolute;
+  font-size: 32px;
+  color: #40c043;
+  width: 35px;
+  height: 35px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.chat-content-list .form-group {
+  width: 100%;
+  text-align: center;
+}
+.chat-content-list .form-group-inline {
+  display: inline-block;
+}
+.custom-select {
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background: url("../images/arrow_down.png") no-repeat right 10px center,
     #b3a7a7;
-    background-size: 10px;
-    padding: 7px 30px 7px 15px;
-    min-height: 34px;
+  background-size: 10px;
+  padding: 7px 30px 7px 15px;
+  min-height: 34px;
+}
+.custom-select option {
+  font-size: 14px;
+  font-weight: 300;
+}
+.custom-select.is-invalid {
+  border: 1px solid #ff2330;
+}
+.custom-select:focus {
+  outline: 0;
+}
+@media (max-width: 801px) {
+  .symptomsImg {
+    width: 470px !important;
   }
-  .custom-select option {
-    font-size: 14px;
-    font-weight: 300;
-  }
-  .custom-select.is-invalid {
-    border: 1px solid #ff2330;
-  }
-  .custom-select:focus {
-    outline: 0;
-  }
-  @media (max-width: 801px) {
-    .symptomsImg {
-      width: 470px !important;
-    }
-  }
+}
 
-  @media (max-width: 540px) {
-    .symptomsImg {
-      width: 95% !important;
-    }
+@media (max-width: 540px) {
+  .symptomsImg {
+    width: 95% !important;
   }
-  
+}
