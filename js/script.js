@@ -347,3 +347,11 @@ $("#input-phone").on("input", function () {
     $(this).val("+380");
   }
 });
+
+// Function which scrolls down when clicked on button
+document.getElementById("scroll_id").addEventListener("click", function () {
+  var targetElement = document.querySelector(this.getAttribute("data-scroll"));
+  if (targetElement) {
+    scrollDown();
+  }
+});
