@@ -2599,6 +2599,7 @@ html.add-scroll {
   width: 750px !important;
 }
 .reviews {
+  font-family: Arial, sans-serif;
   padding: 10px 30px;
   margin-top: 25px;
 }
@@ -2606,7 +2607,7 @@ html.add-scroll {
   text-align: center;
   font-weight: 700;
   font-size: 38px;
-  text-decoration: underline;
+
   color: #222;
 }
 .comment-item {
@@ -2920,6 +2921,7 @@ html.add-scroll {
     background: rgba(0, 0, 0, 0.8);
   }
   .reviews {
+    font-family: Arial, sans-serif;
     padding: 10px 15px;
     margin-top: 0;
   }
